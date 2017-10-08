@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/main.css"> 
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <title>Homepage</title>
-    
-</head>    
+
+</head>
 <body>
-    
+
     <div id="wrapper">
-        
+
         <header>
             <h1>CSS Generator Tools</h1>
             <hr />
@@ -20,49 +20,68 @@
                     <li><a href="#">Project 1</a></li>
                     <li><a href="#">Project 2</a></li>
                     <li><a href="#">Project 3</a></li>
-                
+
                 </ul>
-            
+
             </nav>
         </header>
-        
+
         <section class="section-1">
             <h3>Project Summaries</h3>
             <hr/>
-            
+
             <p>Project 1 - Create a CSS Generator the the CSS property "Rounded Corners"</p>
-        
+
         </section>
 
-        <section class="section-1"> 
-        
+        <section class="section-1">
+
                 <h3>Rounded Corners</h3>
                 <hr/>
-                
+
                 <p>Instructions go here</p>
             <br/><br />
-            
-            <div id="hero-box"> 
+
+            <div id="hero-box">
                 <h4>Rounded Corners</h4>
-            
+
             </div>
-        
-        <form>
-                
-            
-            
-        </form>    
-            
-            
+
+            <form id="frm1">
+
+              Input Number <input type="text" name="quantity" id="e1" oninput="update(e1, output)"><br/>
+              Input Range <input type="range" name="points" id="e2" oninput="update(e2, yui)" min="1" max="25">
+            </form>
+
+            <h1 id="output"></h1>
+
+
+
         </section>
-    
-    
+
+
 
     </div> <!-- end wrapper -->
-    
-    
-    
-    
-    
-</body>    
+
+
+
+
+
+</body>
+
+<script>
+function update(x, y) {
+
+  var ben = document.getElementById(x).value;
+  document.getElementById(y).innerHTML = ben;
+
+}
+function update2() {
+
+  var x = document.getElementById("e2").value;
+  document.getElementById("output").innerHTML = x;
+
+}
+</script>
+
 </html>
