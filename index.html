@@ -48,24 +48,23 @@
             </div>
 
             <form id="frm1">
+        <input type="radio" id="e3" name="OOF" class="radio1" value="1" checked>All Together
+        <input type="radio" id="e4" name="OOF" class="radio1" value="2">Individually
 
-              Input Number <input type="text" name="quantity" id="e1" oninput="update(e1, output)"><br/>
-              Input Range <input type="range" name="points" id="e2" oninput="update(e2, yui)" min="1" max="25">
-            </form>
+        <br/><br/><br/>
+        <div class="sliders2">Disappear</div><Br/>
+        <input type="range" id="e5" class="sliders2" min="1" max="50">
 
-            <h1 id="output"></h1>
+         <br/><br/><br/>
 
+        Rounded Corner<Br/>
+          <input type="range" name="points" id="e1" oninput="update2('e1', 'e2')" class="sliders" min="1" max="50" value="25">
 
+        <input type="text" name="quantity" id="e2" oninput="update2('e2', 'e1')" value="25"><br/>
 
+      </form>
         </section>
-
-
-
     </div> <!-- end wrapper -->
-
-
-
-
 
 </body>
 
@@ -76,10 +75,16 @@ function update(x, y) {
   document.getElementById(y).innerHTML = ben;
 
 }
-function update2() {
 
-  var x = document.getElementById("e2").value;
-  document.getElementById("output").innerHTML = x;
+function update2(x, y) {
+
+  var rcValue = document.getElementById(x).value;
+  document.getElementById(y).value = rcValue;
+  document.getElementById("hero-box").style.borderRadius = rcValue + "px";
+
+  function disappear() {
+  document.getElementsByClassName("sliders2").style.display = "visible";
+}
 
 }
 </script>
