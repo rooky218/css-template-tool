@@ -95,9 +95,12 @@ header hr {
     box-shadow: 11px 14px 47px -12px rgba(0,0,0,0.62);
 }
 
-.sliders2 {
-  width: 80%;
+.group2 {
   display: none;
+}
+
+.group1 {
+  display: block;
 }
 
 .sliders {
@@ -135,7 +138,7 @@ header hr {
   opacity: 1;
 }
 
-#e2 {
+.textbox {
   width: 40px;
   height: 30px;
   padding-left: 5px;

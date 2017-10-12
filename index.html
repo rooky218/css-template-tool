@@ -48,45 +48,100 @@
             </div>
 
             <form id="frm1">
-        <input type="radio" id="e3" name="OOF" class="radio1" value="1" checked>All Together
-        <input type="radio" id="e4" name="OOF" class="radio1" value="2">Individually
 
-        <br/><br/><br/>
-        <div class="sliders2">Disappear</div><Br/>
-        <input type="range" id="e5" class="sliders2" min="1" max="50">
+              Rounded Corner<Br/>
 
-         <br/><br/><br/>
+              <input type="radio" id="e3" name="OOF" class="radio1" value="1" checked>All Together
+              <input type="radio" id="e4" name="OOF" class="radio1" value="2">Individually
 
-        Rounded Corner<Br/>
-          <input type="range" name="points" id="e1" oninput="update2('e1', 'e2')" class="sliders" min="1" max="50" value="25">
+              <br/><br/><br/>
 
-        <input type="text" name="quantity" id="e2" oninput="update2('e2', 'e1')" value="25"><br/>
 
-      </form>
+              <!-- all corners slider -->
+                <div class="">All Corners</div><Br/>
+              <input type="range" name="points" id="e1" oninput="update1('e1', 'e2')"
+                class="sliders" min="1" max="50" value="25">
+
+                <!-- all corners text box -->
+              <input type="text" name="quantity" id="e2" class="textbox"
+              oninput="update('e2', 'e1')" value="25"><br/>
+
+              <br/><Br/><br/>
+
+              <!-- this code default is display: none;
+                  Code only appears after the above radio is set to individual-->
+              <!-- Top left code -->
+              <div class="">Top Left</div><Br/>
+              <input type="range" id="e5" class="sliders" min="1" max="50" value="25"
+              oninput="updatetl('e5', 'e6')">
+
+              <input type="text" name="quantity" id="e6" class=" textbox"
+              oninput="update2('e6', 'e5')" value="25"><br/>
+
+              <br/>
+
+              <!-- top right code -->
+              <div class="">Top Right</div><Br/>
+              <input type="range" id="e7" class="sliders" min="1" max="50" value="25"
+              oninput="update2('e7', 'e8')">
+
+              <input type="text" name="quantity" id="e8" class="textbox"
+              oninput="update2('e8', 'e7')" value="25"><br/>
+
+
+               <br/><br/><br/>
+
+             </form>
+
         </section>
     </div> <!-- end wrapper -->
 
 </body>
 
+
 <script>
-function update(x, y) {
 
-  var ben = document.getElementById(x).value;
-  document.getElementById(y).innerHTML = ben;
+document.getElementsByClassName("sliders2").style.display = "block";
 
-}
 
-function update2(x, y) {
+//update is designed to live update two input types to a set value
+//if one value changes in one form, the other form should reflect same value
+//x is the source value
+//y is the destination value
+//update2 will also update the css relating value, in this case borderRadius
+function update1(x, y) {
 
   var rcValue = document.getElementById(x).value;
   document.getElementById(y).value = rcValue;
   document.getElementById("hero-box").style.borderRadius = rcValue + "px";
+}//end function
 
-  function disappear() {
-  document.getElementsByClassName("sliders2").style.display = "visible";
-}
 
-}
+//Four values: first value applies to top-left,
+//second value applies to top-right,
+//third value applies to bottom-right,
+//and fourth value applies to bottom-left corner
+//border-radius: 15px 50px 30px 5px:
+
+//border-top-left-radius,
+//border-top-right-radius,
+//border-bottom-right-radius
+//border-bottom-left-radius
+
+//updatetl (or TOP LEFT) is designed to live update two input types to a set value
+//if one value changes in one form, the other form should reflect same value
+//x is the source value
+//y is the destination value
+//update2 will also update the css relating value, in this case borderRadius
+function updatetl(x, y) {
+
+  var rcValue = document.getElementById(x).value;
+  document.getElementById(y).value = rcValue;
+  document.getElementById("hero-box").style.bordertopleftradius = rcValue + "px";
+
+}//end update3
+
+
 </script>
 
 </html>
